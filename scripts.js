@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     let radParam = localStorage.getItem('rad');
 
     async function getInternetTime() {
-        const response = await fetch('https://timezoneapi.io/api/timezone/?Asia/Seoul&token=lrfqTszmvtOU');
-        const data = await response.json();
-        return new Date(data.datetime);
-    }
+    const response = await fetch('https://timeapi.io/api/Time/current/zone?timeZone=Asia/Seoul');
+    const data = await response.json();
+    return new Date(data.dateTime);
+}
 
     function formatDate(date, type = "url") {
         const y = date.getFullYear();
